@@ -1,0 +1,15 @@
+.info-div {
+  display: flex;
+  flex-direction: column;
+  color: grey;
+}
+.children-div {
+  display: flex;
+  gap: 20px;
+  margin: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.information {
+  text-align: center;
+}

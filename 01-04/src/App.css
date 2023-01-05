@@ -1,0 +1,9 @@
+.hero {
+  margin: 10px;
+  height: 250px;
+}
+.hero > h1,
+h2 {
+  padding-left: 50px;
+  color: white;
+}
