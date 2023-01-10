@@ -1,0 +1,31 @@
+.button {
+  text-transform: uppercase;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 300ms;
+  font-weight: 500;
+}
+
+.contained {
+  background-color: #9c27b0;
+  color: white;
+}
+.contained:hover {
+  background-color: #6d1b7b;
+}
+.outlined {
+  background-color: white;
+  color: #6d1b7b;
+  border: 1px solid #6d1b7b;
+}
+.outlined:hover,
+.text:hover {
+  background-color: #f3e5f5;
+}
+
+.text {
+  background-color: transparent;
+  color: #6d1b7b;
+}

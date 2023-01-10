@@ -2,7 +2,9 @@ import './App.css';
 import Logo from './components/Logo';
 import NavigationBar from './components/NavigationBar';
 import Hero from './components/Hero';
-
+import InfoCards from './components/InfoCards';
+import MainInfo from './components/MainInfo';
+import NavigationAside from './components/NavigationAside';
 // App.js yra pagrindinis komponentas
 // vienas failas = vienas komponentas
 // komponentai rasomi didziaja raide
@@ -20,6 +22,10 @@ function App() {
       <Logo />
       <NavigationBar />
       <Hero />
+      <InfoCards />
+      <MainInfo>
+        <NavigationAside />
+      </MainInfo>
     </div>
   );
 }

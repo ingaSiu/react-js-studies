@@ -1,0 +1,35 @@
+.product {
+  padding: 10px;
+  border: none;
+  width: 270px;
+  height: 150px;
+  line-height: 10px;
+}
+
+.category {
+  font-size: 13px;
+  color: rgb(130, 128, 128);
+}
+
+.name {
+  font-weight: 400;
+  line-height: 15px;
+}
+
+.price {
+  font-weight: 700;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+.on {
+  color: #000;
+}
+.off {
+  color: #ccc;
+}

@@ -16,37 +16,45 @@
   color: rgb(128, 15, 0);
 }
 
-.hero {
-  height: 500px;
-  background-repeat: no-repeat;
-  background-position: center center;
+.img-hero {
+  width: 900px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.info-small {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+.info-cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
-.info-block {
-  margin: 10px;
+.info-card {
+  padding: 10px;
   width: 250px;
   height: 250px;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  margin: 20px;
 }
-.info-big {
-  display: flex;
-  border: 1px solid violet;
-}
+
 .main-info {
   border: 1px solid black;
-  width: 700px;
+  width: 900px;
   height: 350px;
-  margin: 10px;
+  margin: 0 auto;
+  display: flex;
+  padding-left: 10px;
 }
 .aside-nav {
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
 }
 .nav-content {
   list-style-type: none;
+  width: 170px;
+  height: 240px;
+  line-height: 60px;
+  font-weight: 600;
+  background-color: lavenderblush;
+  margin: 20px;
 }
