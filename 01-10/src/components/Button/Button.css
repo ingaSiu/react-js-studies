@@ -1,0 +1,32 @@
+.count-wrapper {
+  display: flex;
+}
+.wrapper {
+  display: flex;
+}
+.btn-setcount,
+.set-number {
+  border: 1px solid grey;
+  padding: 12px;
+  background-color: white;
+  cursor: pointer;
+  width: 20px;
+  text-align: center;
+}
+
+.btn-add {
+  border: none;
+  font-size: 15px;
+  padding: 6px 35px;
+  letter-spacing: 2px;
+  background-color: deepskyblue;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.btn-add:hover {
+  background-color: dodgerblue;
+}

@@ -1,0 +1,9 @@
+.btn-del {
+  padding: 8px 15px;
+  border: 1px solid rgb(186, 182, 182);
+  background-color: transparent;
+  margin: 10px;
+}
+.btn-del:hover {
+  background-color: lightblue;
+}

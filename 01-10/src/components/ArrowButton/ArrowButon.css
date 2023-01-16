@@ -1,0 +1,11 @@
+.arrow-div {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-arrow {
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px 6px;
+  font-size: 20px;
+}

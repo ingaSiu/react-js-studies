@@ -1,0 +1,14 @@
+.app {
+  padding: 40px;
+}
+.todo-title {
+  margin: 0;
+}
+
+.delete-btn {
+  color: red;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  filter: brightness(0.8);
+}

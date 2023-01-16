@@ -1,0 +1,89 @@
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  width: 45%;
+  gap: 10px;
+}
+.form-title {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 10px;
+}
+
+input {
+  border: none;
+  width: 150px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: lightgray;
+}
+label {
+  color: grey;
+  font-weight: 600;
+}
+select,
+option {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 75%;
+}
+button {
+  background-color: rgb(200, 139, 149);
+  padding: 10px;
+  margin: 10px;
+  width: 20%;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: deeppink;
+}
+.name-div {
+  display: flex;
+  gap: 20px;
+}
+.name-div > label,
+.company-div > label,
+.phone-div > label,
+.subject-div > label {
+  padding-right: 20px;
+  padding-left: 10px;
+}
+.span-align {
+  display: flex;
+  flex-direction: column;
+}
+.span-align > span {
+  color: dimgray;
+}
+
+.company-div > label {
+  padding-right: 20px;
+  padding-left: 10px;
+}
+.company-div > input {
+  width: 70%;
+}
+
+.phone-div {
+  display: flex;
+  gap: 10px;
+}
+
+.area-code {
+  width: 20%;
+}
+.phone-num {
+  width: 100%;
+}

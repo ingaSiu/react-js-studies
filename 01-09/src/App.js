@@ -6,6 +6,7 @@ import MenuList from './components/MenuList/MenuList';
 import Avatar from './components/Avatar/Avatar';
 import Card from './components/Card/Card';
 import MoodChecker from './components/MoodChecker/MoodChecker';
+import Menu from './components/Menu/Menu';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [count, setCount] = useState(0);
@@ -52,6 +53,8 @@ function App() {
       subtitle: 'Loyal pet. Much boop',
     },
   ];
+
+  const [activeMenu, setActiveMenu] = useState('single');
 
   return (
     <div className="App">
@@ -122,6 +125,25 @@ function App() {
       <div>
         <MoodChecker />
       </div>
+      <CustomButton
+        variant={activeMenu === 'single' ? 'contained' : 'outlined'}
+        onClick={() => setActiveMenu('single')}
+      >
+        Show single menu
+      </CustomButton>
+      <CustomButton
+        variant={activeMenu === 'family' ? 'contained' : 'outlined'}
+        onClick={() => setActiveMenu('family')}
+      >
+        Show family menu
+      </CustomButton>
+      <CustomButton
+        variant={activeMenu === 'couple' ? 'contained' : 'outlined'}
+        onClick={() => setActiveMenu('couple')}
+      >
+        Show couples menu
+      </CustomButton>
+      <Menu customerType={activeMenu} />
     </div>
   );
 }
