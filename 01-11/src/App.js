@@ -5,9 +5,11 @@ import HomePage from './pages/HomePage';
 import ContactsPage from './pages/ContactsPage';
 import { Routes, Route } from 'react-router-dom';
 import CarDetailsPage from './pages/CarDetailsPage';
+import FilterList from './components/FilterList/FilterList';
 const App = () => {
   return (
     <div className="todo-app">
+      <FilterList />
       <Routes>
         <Route path="/shopping" element={<ShoppingListApp />} />
         <Route path="/todo" element={<TodoApp />} />
