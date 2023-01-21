@@ -39,10 +39,23 @@ const ImageWrapper = styled.div`
   flex: 2;
   border-top-left-radius: 10%;
   border-bottom-left-radius: 10%;
+  position: relative;
   content: url('https://img.freepik.com/free-photo/young-beautiful-woman-bright-sportwear-isolated-gradient-pink-blue-background-neon-light_155003-24205.jpg?w=1380&t=st=1674154377~exp=1674154977~hmac=109c8967844b4d9c1210b3865a1ebccdd6a8982885e5be718628355a499ea930');
 `;
 const ImageText = styled.div`
   width: 400px;
+  height: 200px;
+  border: 1px solid black;
+  position: absolute;
+  z-index: 99;
+  top: 30%;
+  left: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const fadeIn = keyframes`
   from {
@@ -95,11 +108,13 @@ const JoinPage = () => {
           <DetailsText>Don't have account?</DetailsText> Sign up
         </DetailsTextBold>
       </TextContainer>
-      <ImageWrapper>
-        <ImageText>
-          <Greeting></Greeting>
-        </ImageText>
-      </ImageWrapper>
+
+      <ImageWrapper></ImageWrapper>
+
+      <ImageText>
+        <SiKatacoda size={170} color="black" />
+        <Greeting color="white">Untitled UI</Greeting>
+      </ImageText>
     </Container>
   );
 };
