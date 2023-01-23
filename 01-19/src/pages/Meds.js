@@ -3,7 +3,10 @@ import { useState, useEffect } from 'react';
 import { vetApiUrl } from '../consts/vetApiUrl';
 import { Container } from './PetList';
 import Footer, { footerText } from '../components/Footer';
+import PageName from '../components/PageName';
+import Button from '../components/Button';
 import Navbar from '../components/Navbar';
+
 const MedCard = styled.div`
   border: 1px solid violet;
   display: flex;
@@ -30,6 +33,10 @@ const Meds = () => {
 
   return (
     <div>
+      <Navbar />
+      <PageName title="Medications list:">
+        <Button text="Add medication" />
+      </PageName>
       <Container>
         {medsData &&
           medsData
@@ -37,8 +44,9 @@ const Meds = () => {
             .map((medData) => {
               return (
                 <MedCard key={medData.id}>
-                  <MedText>{medData.name}</MedText>
-                  <MedText>{medData.description}</MedText>
+                  <MedText>Medication id: {medData.id}</MedText>
+                  <MedText>Medication Name: {medData.name}</MedText>
+                  <MedText>Description: {medData.description}</MedText>
                 </MedCard>
               );
             })}
