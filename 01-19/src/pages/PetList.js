@@ -6,17 +6,13 @@ import Card from '../components/PetCard';
 import Button, { Btndiv } from '../components/Button';
 import PageName from '../components/PageName';
 import { vetApiUrl } from '../consts/vetApiUrl';
-
-export const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  width: 100vw;
-  gap: 10px;
-  margin: 20px;
-`;
+import AddPet from '../components/forms/PetForm';
+import { Container, FormContainer } from '../components/otherStyledComponents';
 
 const PetList = () => {
   const [petsData, setPetsData] = useState(undefined);
+
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
   const getPets = () => {
     fetch(`${vetApiUrl}/pets`)
@@ -25,6 +21,11 @@ const PetList = () => {
         setPetsData(response);
       })
       .catch((error) => console.error(error));
+  };
+
+  const afterSubmit = () => {
+    getPets();
+    setIsFormVisible(false);
   };
 
   useEffect(() => {
@@ -46,8 +47,14 @@ const PetList = () => {
     <div>
       <Navbar />
       <PageName title="Pet list">
-        <Button text="Add pet"></Button>
+        <Button text="Add pet" onClickFnc={() => setIsFormVisible(!isFormVisible)}></Button>
       </PageName>
+      {isFormVisible && (
+        <FormContainer>
+          <AddPet onSubmitFunc={afterSubmit}></AddPet>
+        </FormContainer>
+      )}
+
       <Container>
         {petsData &&
           petsData.map((petData) => {

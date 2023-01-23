@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import PageName from '../components/PageName';
 import Button from '../components/Button';
 import { Btndiv } from '../components/Button';
+import { Container } from '../components/otherStyledComponents';
 
 const HealthLog = () => {
   const [logsData, setLogsData] = useState(undefined);
@@ -29,6 +30,7 @@ const HealthLog = () => {
           <Button text="Add log" color="#ff8040" backgroundColor="white" />
         </Btndiv>
       </PageName>
+      <Container></Container>
     </div>
   );
 };

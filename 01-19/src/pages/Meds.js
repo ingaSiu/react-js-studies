@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { vetApiUrl } from '../consts/vetApiUrl';
-import { Container } from './PetList';
+import { Container } from '../components/otherStyledComponents';
 import Footer, { footerText } from '../components/Footer';
 import PageName from '../components/PageName';
 import Button from '../components/Button';

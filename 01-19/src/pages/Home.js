@@ -5,7 +5,7 @@ import { footerText } from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Button from '../components/Button';
 import styled from 'styled-components';
-import AddPet from '../components/PetForm';
+import AddPet from '../components/forms/PetForm';
 
 const Btndiv = styled.div`
   display: flex;
