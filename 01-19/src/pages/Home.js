@@ -5,6 +5,7 @@ import { footerText } from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Button from '../components/Button';
 import styled from 'styled-components';
+import AddPet from '../components/PetForm';
 
 const Btndiv = styled.div`
   display: flex;
@@ -12,24 +13,11 @@ const Btndiv = styled.div`
   justify-content: center;
 `;
 const Home = () => {
-  const [petsData, setPetsData] = useState([
-    {
-      name: 'namae',
-    },
-  ]);
   return (
     <div>
       <Navbar />
-      {petsData &&
-        petsData.map((petData) => {
-          return (
-            <Card name={petData.name}>
-              <Btndiv></Btndiv>
-              <Button color="red" text="test"></Button>
-            </Card>
-          );
-        })}
 
+      <AddPet></AddPet>
       <Footer>{footerText}</Footer>
     </div>
   );

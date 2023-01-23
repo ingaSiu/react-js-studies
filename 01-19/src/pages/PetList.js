@@ -1,37 +1,53 @@
 import { useState, useEffect } from 'react';
-import Footer from '../components/Footer';
-import Card from '../components/PetCard';
-import { footerText } from '../components/Footer';
-import Navbar from '../components/Navbar';
-import Button from '../components/Button';
 import styled from 'styled-components';
-import { petsApiUrl } from '../consts/petsApiUrl';
-const Container = styled.div`
+import Footer, { footerText } from '../components/Footer';
+import Navbar from '../components/Navbar';
+import Card from '../components/PetCard';
+import Button, { Btndiv } from '../components/Button';
+import PageName from '../components/PageName';
+import { vetApiUrl } from '../consts/vetApiUrl';
+
+export const Container = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
   gap: 10px;
   margin: 20px;
-`;
-
-const Btndiv = styled.div`
-  display: flex;
-  gap: 5px;
-  justify-content: center;
 `;
 
 const PetList = () => {
   const [petsData, setPetsData] = useState(undefined);
 
-  useEffect(() => {
-    fetch(`${petsApiUrl}/pets`)
+  const getPets = () => {
+    fetch(`${vetApiUrl}/pets`)
       .then((response) => response.json())
       .then((response) => {
         setPetsData(response);
       })
       .catch((error) => console.error(error));
+  };
+
+  useEffect(() => {
+    getPets();
   }, []);
+
+  const deleteHandle = (id) => {
+    fetch(`${vetApiUrl}/pets/${id}`, {
+      method: 'DELETE',
+    }).then((response) => {
+      if (response.ok) {
+        getPets();
+      } else {
+        console.error('Could not delete pet');
+      }
+    });
+  };
   return (
     <div>
       <Navbar />
+      <PageName title="Pet list">
+        <Button text="Add pet"></Button>
+      </PageName>
       <Container>
         {petsData &&
           petsData.map((petData) => {
@@ -39,12 +55,17 @@ const PetList = () => {
               <Card
                 key={petData.id}
                 name={petData.name}
-                dob={new Date(petData.dob).toDateString()}
+                dob={new Date(petData.dob).toLocaleDateString('lt')}
                 client_email={petData.client_email}
               >
                 <Btndiv>
                   <Button text="View log"></Button>
-                  <Button backgroundColor="white" color="orange" text="delete"></Button>
+                  <Button
+                    backgroundColor="white"
+                    color="orange"
+                    text="delete"
+                    onClickFnc={() => deleteHandle(petData.id)}
+                  ></Button>
                 </Btndiv>
               </Card>
             );
