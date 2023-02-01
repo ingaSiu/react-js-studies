@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { vetApiUrl } from '../../consts/vetApiUrl';

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import Footer, { footerText } from '../components/Footer';
 import Navbar from '../components/Navbar';
 import Card from '../components/PetCard';

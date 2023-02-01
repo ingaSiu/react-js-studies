@@ -3,6 +3,7 @@ import ArrowButton from '../ArrowButton/ArrowButton';
 const Product = ({ imageUrl, title, price, description, availability, category, children }) => {
   return (
     <div className="card-wrapper">
+      cd ..cd
       <div className="img-wrapper">
         <img className="painting" src={imageUrl} alt="" />
       </div>

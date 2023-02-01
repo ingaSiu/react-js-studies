@@ -17,8 +17,13 @@ const WeatherApp = () => {
   //useEffect viduj iskvieciant yra anonimine funkcija, ir tuscias array (dependency array)
   // kai dependency array kas nors pasikeicia, pasitrigerina useEffect function
 
+  /*return ({weathersData && weathersData.map((weatherData) => {
+    return <WeatherCard name={weatherData.name} dob={weatherData.dob}> <SpecialButton color="black" title="click me" /></WeatherCard>;
+  })});*/
+
   return <div>{weatherData && <WeatherCard weatherData={weatherData} />}</div>;
   // rasom if, kad jei weatherData ir true, tai tada atvaizduok po && card
 };
 
 export default WeatherApp;
+

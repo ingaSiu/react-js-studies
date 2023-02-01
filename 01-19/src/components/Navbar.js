@@ -50,7 +50,7 @@ const Navbar = () => {
         <NavLink as={Link} to="/meds">
           Medication
         </NavLink>
-        <NavLink as={Link} to="/healthlog">
+        <NavLink as={Link} to="/logs">
           Health Logs
         </NavLink>
       </NavDiv>

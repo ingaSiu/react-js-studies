@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { vetApiUrl } from '../consts/vetApiUrl';
-import { Container } from '../components/otherStyledComponents';
+import { Container, FormContainer } from '../components/otherStyledComponents';
 import Footer, { footerText } from '../components/Footer';
 import PageName from '../components/PageName';
 import Button from '../components/Button';
 import Navbar from '../components/Navbar';
+import AddMeds from '../components/forms/MedForm';
 
 const MedCard = styled.div`
   border: 1px solid violet;
@@ -21,22 +22,38 @@ const MedText = styled.p`
 
 const Meds = () => {
   const [medsData, setMedsData] = useState(undefined);
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
-  useEffect(() => {
+  const getMeds = () => {
     fetch(`${vetApiUrl}/meds`)
       .then((response) => response.json())
       .then((response) => {
         setMedsData(response);
       })
       .catch((error) => console.error(error));
+  };
+
+  const afterSubmit = () => {
+    getMeds();
+    setIsFormVisible(false);
+  };
+
+  useEffect(() => {
+    getMeds();
   }, []);
 
   return (
     <div>
       <Navbar />
       <PageName title="Medications list:">
-        <Button text="Add medication" />
+        <Button text="Add medication" onClickFnc={() => setIsFormVisible(!isFormVisible)} />
       </PageName>
+      {isFormVisible && (
+        <FormContainer>
+          <AddMeds onSubmitFunc={afterSubmit} />
+        </FormContainer>
+      )}
+
       <Container>
         {medsData &&
           medsData
